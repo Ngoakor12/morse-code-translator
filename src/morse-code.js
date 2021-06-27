@@ -1,70 +1,16 @@
-let normalCharacters = [
-  "a",
-  "b",
-  "c",
-  "d",
-  "e",
-  "f",
-  "g",
-  "h",
-  "i",
-  "j",
-  "k",
-  "l",
-  "m",
-  "n",
-  "o",
-  "p",
-  "q",
-  "r",
-  "s",
-  "t",
-  "u",
-  "v",
-  "w",
-  "x",
-  "y",
-  "z",
-];
-let morseCodeCharacters = [
-  ".-",
-  "-...",
-  "-.-.",
-  "-..",
-  ".",
-  "..-.",
-  "--.",
-  "....",
-  "..",
-  ".---",
-  "-.-",
-  ".-..",
-  "--",
-  "-.",
-  "---",
-  ".--.",
-  "--.-",
-  ".-.",
-  "...",
-  "-",
-  "..-",
-  "...-",
-  ".--",
-  "-..-",
-  "-.--",
-  "--..",
-];
+const { charDictionary } = require("./morse-code-helpers");
+const alphabetChars = Object.keys(charDictionary);
+const morseChars = Object.values(charDictionary);
 
-//main functions/////////////////////////////////
-function lettersToMorseCode(normalStr) {
+function lettersToMorseCode(alphabetStr) {
   let morseStr = [];
-  let normalstrArray = normalStr.toLowerCase().split("");
-  for (let i = 0; i < normalstrArray.length; i++) {
-    for (let j = 0; j < normalCharacters.length; j++) {
-      if (normalstrArray[i] == normalCharacters[j]) {
-        morseStr.push(morseCodeCharacters[j], " ");
+  let alphabetStrArray = alphabetStr.toLowerCase().split("");
+  for (let i = 0; i < alphabetStrArray.length; i++) {
+    for (let j = 0; j < alphabetChars.length; j++) {
+      if (alphabetStrArray[i] == alphabetChars[j]) {
+        morseStr.push(morseChars[j], " ");
         break;
-      } else if (normalstrArray[i] == " ") {
+      } else if (alphabetStrArray[i] == " ") {
         morseStr.push("/", " ");
         break;
       }
@@ -74,7 +20,7 @@ function lettersToMorseCode(normalStr) {
   morseStr = morseStr.join("");
 
   //asserts number of characters and spaces
-  assertions(normalStr, morseStr);
+  assertions(alphabetStr, morseStr);
 
   return morseStr;
 }
@@ -83,9 +29,9 @@ function morseCodeToLetters(morseStr) {
   let normalStr = [];
   let morseStrArray = morseStr.split(" ");
   for (let i = 0; i < morseStrArray.length; i++) {
-    for (let j = 0; j < morseCodeCharacters.length; j++) {
-      if (morseStrArray[i] == morseCodeCharacters[j]) {
-        normalStr.push(normalCharacters[j]);
+    for (let j = 0; j < morseChars.length; j++) {
+      if (morseStrArray[i] == morseChars[j]) {
+        normalStr.push(alphabetChars[j]);
         break;
       } else if (morseStrArray[i] == "/") {
         normalStr.push(" ");
@@ -117,5 +63,6 @@ function assertions(normalStr, morseStr) {
 
   return;
 }
+console.log(lettersToMorseCode);
 
 module.exports = { lettersToMorseCode, morseCodeToLetters };
