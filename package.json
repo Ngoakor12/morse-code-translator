@@ -1,0 +1,23 @@
+{
+  "name": "Ngoako-Ramokgopa-184-assertive-programming-kata-javascript",
+  "version": "1.0.0",
+  "description": "Morse code (184)\r For raw project instructions see: http://syllabus.africacode.net/projects/morse-code/",
+  "main": "morse-code.js",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Umuzi-org/Ngoako-Ramokgopa-184-assertive-programming-kata-javascript.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Umuzi-org/Ngoako-Ramokgopa-184-assertive-programming-kata-javascript/issues"
+  },
+  "homepage": "https://github.com/Umuzi-org/Ngoako-Ramokgopa-184-assertive-programming-kata-javascript#readme",
+  "devDependencies": {
+    "jasmine": "^3.6.4"
+  }
+}
