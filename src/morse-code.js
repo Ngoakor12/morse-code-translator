@@ -1,4 +1,4 @@
-const { charDictionary } = require("./morse-code-helpers");
+const { charDictionary, assertions } = require("./morse-code-helpers");
 const alphabetChars = Object.keys(charDictionary);
 const morseChars = Object.values(charDictionary);
 
@@ -46,23 +46,5 @@ function morseCodeToLetters(morseStr) {
 
   return normalStr;
 }
-
-function assertions(normalStr, morseStr) {
-  let numberOfCharsError =
-    "The number of characters in the input is not the same as that of output";
-  let numberOfSpacesError =
-    "The number of spaces in the input is not the same as that of output";
-
-  let normalStrLength = normalStr.length;
-  let morseStrLength = morseStr.split(" ").length;
-  let normalStrSpaces = normalStr.split(" ").length - 1;
-  let morseStrSpaces = morseStr.split("/").length - 1;
-
-  console.assert(normalStrLength == morseStrLength, numberOfCharsError);
-  console.assert(normalStrSpaces == morseStrSpaces, numberOfSpacesError);
-
-  return;
-}
-console.log(lettersToMorseCode);
 
 module.exports = { lettersToMorseCode, morseCodeToLetters };
