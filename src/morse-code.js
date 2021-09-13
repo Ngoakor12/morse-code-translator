@@ -1,4 +1,3 @@
-const { charDictionary, assertions } = require("./morse-code-helpers");
 const alphabetChars = Object.keys(charDictionary);
 const morseChars = Object.values(charDictionary);
 
@@ -20,7 +19,7 @@ function lettersToMorseCode(alphabetStr) {
   morseStr = morseStr.join("");
 
   //asserts number of characters and spaces
-  assertions(alphabetStr, morseStr);
+  // assertions(alphabetStr, morseStr);
 
   return morseStr;
 }
@@ -42,7 +41,7 @@ function morseCodeToLetters(morseStr) {
   normalStr[0] = normalStr[0].toUpperCase();
   normalStr = normalStr.join("");
 
-  assertions(normalStr, morseStr);
+  // assertions(normalStr, morseStr);
 
   return normalStr;
 }
