@@ -1,2 +1,2 @@
 # morse-code-translator
-Algorithm to translate normal alphabet characters to morse code characters and vice versa
+Algorithm to translate English alphabet characters to Morse code characters and vice versa
